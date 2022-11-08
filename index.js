@@ -48,12 +48,13 @@ app.post('/plant',async(req,res)=>{
     }
 })
 
-app.delete('/plant',async(req,res)=>{
-    const {id}=req.body
+app.delete('/plant/:id',async(req,res)=>{
+    const {id}=req.params
     try {
         const plant= await Plant.findByIdAndDelete(id);
         // const plant = new Plant({...req.body})
         // await plant.save()
+        console.log(plant)
         console.log(plant)
         res.status(200).send('Success')
 
@@ -72,6 +73,7 @@ app.get('/disease',async(req,res)=>{
         res.status(500).send(error)
     }
 })
+
 
 app.post('/disease',async(req,res)=>{
     console.log(req.body)

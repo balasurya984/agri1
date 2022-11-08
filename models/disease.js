@@ -4,7 +4,8 @@ const {Schema}=mongoose
 const diseaseSchema = new Schema({
         image:String,
         name:String,
-        disease:String
+        disease:String,
+        link:String
         
 })
 
